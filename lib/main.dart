@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
+// ignore_for_file: prefer_const_constructors
+
 main() {
-  runApp(const AppWidget());
+  runApp(AppWidget(title: "Curso Flutter"));
 }
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
+  final String title;
+  const AppWidget({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return (const Center(
-      child: Text("Curso Flutter #6",
+    return (Center(
+      child: Text(title,
           textDirection: TextDirection.ltr,
           style: TextStyle(fontSize: 50.0, color: Colors.white60)),
     ));
