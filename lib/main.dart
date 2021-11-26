@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, avoid_print
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -27,10 +27,18 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Flutterando"),
+      child: GestureDetector(
+        child: Text("Flutterando contador : $counter"),
+        onTap: () {
+          setState(() {
+            counter++;
+          });
+        },
+      ),
     );
   }
 }
