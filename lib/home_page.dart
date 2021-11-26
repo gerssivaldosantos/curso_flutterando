@@ -15,20 +15,28 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      floatingActionButton: FloatingActionButton.large(onPressed: () {
+        setState(() {
+          counter--;
+        });
+      }),
+      appBar: AppBar(title: const Text("HomePage")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
-                child: Text(
-                  "Counter : $counter",
-                ),
-                onTap: () {
-                  setState(() {
-                    counter++;
-                  });
-                }),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 40.0),
+              child: GestureDetector(
+                  child: Text(
+                    "Counter : $counter",
+                  ),
+                  onTap: () {
+                    setState(() {
+                      counter++;
+                    });
+                  }),
+            ),
             FloatingActionButton.large(
                 child: const Icon(Icons.add),
                 backgroundColor: Colors.blueGrey,
