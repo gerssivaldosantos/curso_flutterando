@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -12,21 +12,19 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int counter = 0;
+  bool isCheck = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("HomePage")),
-      body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.black,
-        child: Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.red,
-            )),
+      body: Center(
+        child: Switch(
+            value: isCheck,
+            onChanged: (value) {
+              setState(() {
+                isCheck = !isCheck;
+              });
+            }),
       ),
     );
   }

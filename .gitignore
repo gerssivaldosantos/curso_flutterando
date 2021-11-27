@@ -73,6 +73,7 @@ android
 ios
 test 
 web
+connect_to_a50.sh
 .metadata
 analysis_options.yaml 
 build
