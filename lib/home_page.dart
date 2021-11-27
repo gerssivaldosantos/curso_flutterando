@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_print
 
+import 'package:curso_flutterando/app_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,19 +12,17 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int counter = 0;
-  bool isCheck = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("HomePage")),
+      appBar: AppBar(
+        title: const Text("HomePage"),
+      ),
       body: Center(
         child: Switch(
-            value: isCheck,
+            value: AppController.instance.isDarkTheme,
             onChanged: (value) {
-              setState(() {
-                isCheck = !isCheck;
-              });
+              AppController.instance.changeTheme();
             }),
       ),
     );
