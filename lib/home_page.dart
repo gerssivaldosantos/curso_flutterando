@@ -14,16 +14,18 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("HomePage"),
-      ),
-      body: Center(
-        child: Switch(
-            value: AppController.instance.isDarkTheme,
-            onChanged: (value) {
-              AppController.instance.changeTheme();
-            }),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("HomePage"),
+        ),
+        body: Center(
+          child: Switch(
+              value: AppController.instance.isDarkTheme,
+              onChanged: (value) {
+                AppController.instance.changeTheme();
+              }),
+        ),
       ),
     );
   }
