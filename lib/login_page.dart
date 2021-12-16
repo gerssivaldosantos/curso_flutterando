@@ -10,23 +10,47 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Material(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Email',
+        Padding(
+          padding: const EdgeInsets.fromLTRB(15, 0, 15, 12),
+          child: TextField(
+            onChanged: (text) {
+              email = text;
+            },
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Email',
+            ),
           ),
         ),
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Senha',
+        Padding(
+          padding: const EdgeInsets.fromLTRB(15, 0, 15, 12),
+          child: TextField(
+            onChanged: (text) {
+              password = text;
+            },
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Senha',
+            ),
           ),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            debugPrint(
+                'Os valores Obtidos são\nemail:$email\npassword:$password');
+          },
+          child: Text('Entrar'),
         )
       ],
     ));
