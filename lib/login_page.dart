@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:curso_flutterando/initial_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,8 +15,7 @@ class _LoginPageState extends State<LoginPage> {
 
   auth() {
     if (password == 'teste' && email == 'canalandows') {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => InitialPage()));
+      Navigator.of(context).pushReplacementNamed('/initial_page');
     } else {
       debugPrint('Não autenticado ! ');
     }
