@@ -16,8 +16,8 @@ class _LoginPageState extends State<LoginPage> {
 
   auth() {
     if (password == 'teste' && email == 'canalandows') {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => InitialPage()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => InitialPage()));
     } else {
       debugPrint('Não autenticado ! ');
     }
