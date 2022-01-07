@@ -1,4 +1,4 @@
-# curso_flutterando
+# projeto
 
 A new Flutter project.
 
