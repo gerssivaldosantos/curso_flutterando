@@ -16,9 +16,26 @@ class _LoginPageState extends State<LoginPage> {
   auth() {
     if (password == 'teste' && email == 'canalandows') {
       Navigator.of(context).pushReplacementNamed('/initial_page');
+      debugPrint('Login realizado com sucesso');
     } else {
       debugPrint('Não autenticado ! ');
     }
+  }
+
+  Widget inputDecorated(String name) {
+    return TextField(
+      onChanged: (text) {
+        email = text;
+      },
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.blue),
+        ),
+        border: OutlineInputBorder(),
+        labelText: name,
+      ),
+    );
   }
 
   @override
@@ -29,41 +46,53 @@ class _LoginPageState extends State<LoginPage> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 0, 15, 12),
-                child: TextField(
-                  onChanged: (text) {
-                    email = text;
-                  },
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                  ),
+              Spacer(
+                flex: 4,
+              ),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: Image.asset("assets/images/logo.png")),
+              SizedBox(
+                height: 35,
+              ),
+              Container(
+                //inputs width
+                width: MediaQuery.of(context).size.width * 0.88,
+                child: Column(
+                  children: [
+                    inputDecorated('Email'),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    inputDecorated("Senha"),
+                  ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 0, 15, 12),
-                child: TextField(
-                  onChanged: (text) {
-                    password = text;
-                  },
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Senha',
-                  ),
-                ),
+              SizedBox(
+                height: 20,
               ),
               ElevatedButton(
                 onPressed: () {
                   auth();
                 },
-                child: Text('Entrar'),
-              )
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue)),
+                //set the background colors of the button and the text
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  height: 50,
+                  child: Center(
+                    child: Text(
+                      'Entrar',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
+                ),
+              ),
+              Spacer(flex: 6)
             ],
           ),
         ),
