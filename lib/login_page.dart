@@ -18,24 +18,9 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.of(context).pushReplacementNamed('/initial_page');
       debugPrint('Login realizado com sucesso');
     } else {
+      debugPrint('\n Ola $email\n$password');
       debugPrint('Não autenticado ! ');
     }
-  }
-
-  Widget inputDecorated(String name) {
-    return TextField(
-      onChanged: (text) {
-        email = text;
-      },
-      keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blue),
-        ),
-        border: OutlineInputBorder(),
-        labelText: name,
-      ),
-    );
   }
 
   @override
@@ -62,11 +47,63 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width * 0.88,
                 child: Column(
                   children: [
-                    inputDecorated('Email'),
+                    TextField(
+                      onChanged: (text) {
+                        email = text;
+                      },
+                      cursorHeight: 20,
+                      cursorColor: Colors.black,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          disabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          labelText: "Email",
+                          labelStyle: TextStyle(color: Colors.blue)),
+                    ),
                     SizedBox(
                       height: 20,
                     ),
-                    inputDecorated("Senha"),
+                    TextField(
+                      onChanged: (text) {
+                        password = text;
+                      },
+                      cursorHeight: 20,
+                      cursorColor: Colors.black,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          disabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          labelText: "Senha",
+                          labelStyle: TextStyle(color: Colors.blue)),
+                    ),
                   ],
                 ),
               ),
