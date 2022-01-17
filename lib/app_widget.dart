@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto/pages/counter_page.dart';
 import 'package:projeto/pages/initial_page.dart';
 import 'package:projeto/pages/login_page.dart';
+import 'package:projeto/pages/users_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -16,6 +17,7 @@ class AppWidget extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/initial_page': (context) => InitialPage(),
         '/counter_page': (context) => CounterPage(),
+        '/users_page': (context) => UsersPage(),
       },
     );
   }
