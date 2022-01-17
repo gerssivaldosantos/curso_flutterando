@@ -25,6 +25,30 @@ class _InitialPageState extends State<InitialPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Gerssivaldo Santos"),
+              accountEmail: Text('gerssivaldosantos@gmail.com'),
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: Image.network(
+                    "https://avatars.githubusercontent.com/u/61440136?v=4"),
+              ),
+              
+            ),
+            ListTile(
+              title: Text("Finalizar Sessão"),
+              subtitle: Text("Refazer seu login"),
+              leading: Icon(Icons.logout),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text('Bem-vindo'),
         backgroundColor: Colors.blue,
