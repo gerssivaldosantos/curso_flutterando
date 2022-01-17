@@ -15,13 +15,11 @@ class UserCard extends StatelessWidget {
               Container(
                 height: 120,
                 width: 120,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://avatars.githubusercontent.com/u/61440136?v=4'),
-                      fit: BoxFit.cover,
-                    )),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Image.network(
+                      'https://avatars.githubusercontent.com/u/61440136?v=4'),
+                ),
               ),
               SizedBox(
                 width: 20,
