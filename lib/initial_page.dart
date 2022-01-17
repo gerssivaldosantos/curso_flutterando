@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto/widgets/blue_button.dart';
 
 class InitialPage extends StatefulWidget {
   const InitialPage({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _InitialPageState extends State<InitialPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bem-vindo'),
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
@@ -30,28 +32,14 @@ class _InitialPageState extends State<InitialPage> {
               'Lista de páginas',
               style: TextStyle(fontSize: 30),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: goToCounterPage,
-                child: const Text(
-                  'Contador',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
+            SizedBox(
+              height: 20,
             ),
-            const SizedBox(
-              height: 50,
-            ),
+            blueButton(context, "Contador", 25.0, 50.0, 0.3, goToCounterPage),
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {
-                backToLogin();
-              },
-              child: const Text('Voltar'),
-            )
+            blueButton(context, "Voltar ao Login", 25.0, 50.0, 0.3, backToLogin)
           ],
         ),
       ),
