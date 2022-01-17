@@ -87,7 +87,7 @@ class _CounterPageState extends State<CounterPage> {
               ],
             ),
             Spacer(),
-            blueButton(context, "Voltar à página inicial", 25.0, 50.0, 0.4,
+            blueButton(context, "Voltar à página inicial", 25.0, 50.0, 0.6,
                 backToInitialPage),
             Spacer(
               flex: 2,

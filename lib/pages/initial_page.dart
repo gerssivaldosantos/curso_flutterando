@@ -57,7 +57,7 @@ class _InitialPageState extends State<InitialPage> {
                   height: 20,
                 ),
                 blueButtonOutlined(
-                    context, "Voltar ao Login", 25.0, 50.0, 0.3, backToLogin)
+                    context, "Voltar ao Login", 25.0, 50.0, 0.5, backToLogin)
               ],
             ),
           ),
