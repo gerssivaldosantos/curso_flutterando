@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:projeto/widgets/blue_button.dart';
+import 'package:projeto/widgets/blue_button_outlined.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,6 +23,10 @@ class _LoginPageState extends State<LoginPage> {
       debugPrint('\n Ola $email\n$password');
       debugPrint('Não autenticado ! ');
     }
+  }
+
+  register() {
+    debugPrint('Function not created !');
   }
 
   @override
@@ -110,26 +116,13 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  auth();
-                },
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue)),
-                //set the background colors of the button and the text
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  height: 50,
-                  child: Center(
-                    child: Text(
-                      'Entrar',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                  ),
-                ),
-              ),
-              Spacer(flex: 6)
+              blueButton(context, "Entrar", 25.0, 50.0, 0.4, auth),
+              Spacer(flex: 4),
+              blueButtonOutlined(
+                  context, "Registrar", 28.0, 50.0, 0.5, register),
+              SizedBox(
+                height: 20,
+              )
             ],
           ),
         ),
