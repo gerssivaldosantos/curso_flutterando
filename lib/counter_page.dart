@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto/widgets/blue_button.dart';
 
 class CounterPage extends StatefulWidget {
   const CounterPage({Key? key}) : super(key: key);
@@ -32,6 +33,10 @@ class _CounterPageState extends State<CounterPage> {
     });
   }
 
+  backToInitialPage() {
+    Navigator.of(context).pushReplacementNamed("/initial_page");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +66,7 @@ class _CounterPageState extends State<CounterPage> {
               children: [
                 FloatingActionButton(
                   child: Icon(Icons.add),
+                  backgroundColor: Colors.green,
                   onPressed: increment,
                 ),
                 SizedBox(
@@ -76,9 +82,13 @@ class _CounterPageState extends State<CounterPage> {
                 FloatingActionButton(
                   child: Icon(Icons.autorenew),
                   onPressed: reset,
+                  backgroundColor: Colors.blue,
                 ),
               ],
             ),
+            Spacer(),
+            blueButton(context, "Voltar à página inicial", 25.0, 50.0, 0.4,
+                backToInitialPage),
             Spacer(
               flex: 2,
             ),
